@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
-
-import ingStyles from "./Burger-ingredients.modules.css";
+import PropTypes from "prop-types";
+import ingStyles from "./Burger-ingredients.module.css";
 
 class BurgerIngredients extends Component {
-
     render() {
         let ingredient = null;
 
-        switch(props.type) {
+        switch(this.props.type) {
             case("bottom-bun"):
             ingredient = <div className = {ingStyles.BreadBottom}></div>;
             break;
@@ -41,6 +40,12 @@ class BurgerIngredients extends Component {
 
         }
         return ingredient;
-        }
+    }
 }
+
+BurgerIngredients.propTypes = {
+    type: PropTypes.string.isRequired
+}
+
+export default BurgerIngredients;
     
