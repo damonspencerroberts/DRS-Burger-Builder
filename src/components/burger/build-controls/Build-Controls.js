@@ -10,6 +10,7 @@ const buildControls = (props) =>
             label = {e.label}
             moreClick = {() => props.ingAdd(e.type)}
             lessClick = {() => props.ingDel(e.type)}
+            disInfo = {props.disInfo[e.type]}
             />)}
     </div>
 ;

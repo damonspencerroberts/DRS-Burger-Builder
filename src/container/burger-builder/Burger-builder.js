@@ -41,6 +41,10 @@ export default class BurgerBuilder extends Component {
 
     handleLessIngredients = (type) => {
         const curCount = this.state.ingredients[type];
+        //if curcount of type is less than 0, return dont do anything
+        if (curCount <= 0) {
+            return;
+        }
         const newCount = curCount - 1;
         const dupState = {...this.state.ingredients};
         dupState[type] = newCount;
@@ -54,6 +58,12 @@ export default class BurgerBuilder extends Component {
 
     
     render() {
+        //try to put neg values back to 0
+        const disableInfo = {...this.state.ingredients};
+        for (let key in disableInfo) {
+            disableInfo[key] = disableInfo[key] <= 0;
+        }
+
         return (
             <Fr>
                 <Burger ingredients = {this.state.ingredients}
@@ -62,6 +72,8 @@ export default class BurgerBuilder extends Component {
                 <BuildControls 
                     ingAdd = {this.handleAddIngredients}
                     ingDel = {this.handleLessIngredients}
+                    //if disable info is less than zero button will be disabled, and value wont cant go lower
+                    disInfo = {disableInfo}
                 />
             </Fr>
         )

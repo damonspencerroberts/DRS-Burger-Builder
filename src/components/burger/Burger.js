@@ -24,13 +24,13 @@ export default class Burger extends Component {
         const transLength = transIngredients.length;
                 
         return  <div className = {classes.Burger}>
+                    <div className = {classes.Price}><span>Price: ${this.props.totalPrice}</span></div>
                     <BurgerIngredient type = "top-bun"/>
                         {transLength === 0 ? 
                             <h2 className = {classes.BurgerWarning}>{"Please Add Some Ingredients".toUpperCase()}</h2>
                             :
                             transIngredients}
                     <BurgerIngredient type = "bottom-bun"/>
-                    <div className = {classes.Price}><span>Price: ${this.props.totalPrice}</span></div>
                 </div>
     }
 }
