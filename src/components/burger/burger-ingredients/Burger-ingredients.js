@@ -43,6 +43,14 @@ class BurgerIngredients extends Component {
                 <div className = {ingStyles.Pickles}></div></Fr>
             break;
 
+            case('onion'):
+            ingredient = <div className = {ingStyles.Onion}></div>
+            break;
+
+            case('tomato'):
+            ingredient = <div className = {ingStyles.Tomato}></div>
+            break;
+            
             default:
                 ingredient = null;
 

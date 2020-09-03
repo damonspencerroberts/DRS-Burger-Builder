@@ -1,10 +1,19 @@
 .BuildControls {
-    width: 100%;
-    background-color: rgba(77, 34, 0, 0.493);
+    width: 500px;
     display: flex;
     flex-flow: column;
     align-items: center;
-    box-shadow: 0px 2px 1px #ccc;
-    margin: auto;
+    background-color: rgb(223, 223, 223);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.603);
+    margin: 10px auto;
     padding: 10px 0;
+    border-radius: 5px;
+    height: 300px;
+    overflow: auto;
+}
+
+@media (max-width: 500px) {  
+    .BuildControls {
+        width: 450px;
+    }
 }

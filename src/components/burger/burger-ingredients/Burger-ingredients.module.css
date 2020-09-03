@@ -107,8 +107,8 @@
 
 .Bacon {
     width: 80%;
-    height: 3%;
-    background: linear-gradient(#bf3813, #c45e38);
+    height: 4%;
+    background: linear-gradient(#992d0f, #ca246f);
     margin: 2% auto;
 }
 
@@ -120,3 +120,17 @@
     display: inline-block;
     border-radius: 20px;
 }
+.Tomato {
+  width: 80%;
+  background: linear-gradient(#F13233, #ff0d11);
+  height: 4%;
+  margin: 2% auto;
+  }
+
+.Onion {
+  width: 80%;
+  background: linear-gradient(#6b153c, #ff3690);
+  height: 3%;
+  border-radius: 10px;
+  margin: 2% auto;
+  }

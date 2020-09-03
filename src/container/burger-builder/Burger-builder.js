@@ -7,7 +7,9 @@ const EACH_PRICE = {
     bacon: 1.50,
     pickle: 0.25,
     cheese: 0.50,
-    patty: 2.00
+    patty: 2.00,
+    tomato: 0.25,
+    onion: 0.25
 }
 
 export default class BurgerBuilder extends Component {
@@ -18,9 +20,11 @@ export default class BurgerBuilder extends Component {
             ingredients: {
               lettuce: 0,
               bacon: 0,
+              tomato: 0, 
               pickle: 0,
+              onion: 0,
               cheese: 0,
-              patty: 0 
+              patty: 0
             },
             priceTotal: 4.00
         }
@@ -54,7 +58,7 @@ export default class BurgerBuilder extends Component {
 
         const curPrice = this.state.priceTotal;
         const newPrice = curPrice - EACH_PRICE[type];
-        this.setState({ingredients: dupState, priceTotal: newPrice})
+        this.setState({ingredients: dupState, priceTotal: newPrice.toFixed(2)})
     }
 
 

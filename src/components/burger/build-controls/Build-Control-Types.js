@@ -18,6 +18,14 @@ const DiffControls = [
     {
        label: "Meat",
        type: "patty"
+    },
+    {
+       label: "Onions",
+       type: "onion"
+    },
+    {
+       label: "Tomato",
+       type: "tomato"
     }
     
 ];
