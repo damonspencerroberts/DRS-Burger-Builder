@@ -111,3 +111,12 @@
     background: linear-gradient(#bf3813, #c45e38);
     margin: 2% auto;
 }
+
+.Pickles {
+    width: 15%;
+    margin: 2% 3% 2% 0;
+    background: linear-gradient(#033a00, #81c539);
+    height: 3%;
+    display: inline-block;
+    border-radius: 20px;
+}

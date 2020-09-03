@@ -3,10 +3,11 @@ import Burger from "../../components/burger/Burger";
 import BuildControls from "../../components/burger/build-controls/Build-Controls";
 
 const EACH_PRICE = {
-    lettuce: 0.5,
-    bacon: 1.5,
-    cheese: 0.5,
-    patty: 2
+    lettuce: 0.50,
+    bacon: 1.50,
+    pickle: 0.25,
+    cheese: 0.50,
+    patty: 2.00
 }
 
 export default class BurgerBuilder extends Component {
@@ -17,10 +18,11 @@ export default class BurgerBuilder extends Component {
             ingredients: {
               lettuce: 0,
               bacon: 0,
+              pickle: 0,
               cheese: 0,
               patty: 0 
             },
-            priceTotal: 4
+            priceTotal: 4.00
         }
         this.handleAddIngredients = this.handleAddIngredients.bind(this);
         this.handleLessIngredients = this.handleLessIngredients.bind(this);

@@ -12,9 +12,14 @@ const DiffControls = [
        type: "bacon"
     },
     {
+       label: "Pickles",
+       type: "pickle"
+    },
+    {
        label: "Meat",
        type: "patty"
     }
+    
 ];
 
 export default DiffControls;

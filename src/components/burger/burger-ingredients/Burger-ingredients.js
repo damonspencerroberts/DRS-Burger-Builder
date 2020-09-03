@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment as Fr } from 'react';
 import PropTypes from "prop-types";
 import ingStyles from "./Burger-ingredients.module.css";
 
@@ -33,6 +33,14 @@ class BurgerIngredients extends Component {
 
             case('bacon'):
             ingredient = <div className = {ingStyles.Bacon} ></div>
+            break;
+
+            case('pickle'):
+            ingredient = <Fr><div className = {ingStyles.Pickles}></div>
+                <div className = {ingStyles.Pickles}></div>
+                <div className = {ingStyles.Pickles}></div>
+                <div className = {ingStyles.Pickles}></div>
+                <div className = {ingStyles.Pickles}></div></Fr>
             break;
 
             default:
