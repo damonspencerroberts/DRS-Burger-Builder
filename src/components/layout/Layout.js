@@ -3,7 +3,6 @@ import styles from "./Layout.module.css"
 
 const Layout = (props) => 
     <Fragment>
-        <div> Toolbar, Sidedrawer, Backdrop </div>
         <main className = {styles.content}>
             {props.children}
         </main>

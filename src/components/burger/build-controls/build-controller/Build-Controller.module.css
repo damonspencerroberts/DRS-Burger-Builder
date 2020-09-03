@@ -1,0 +1,45 @@
+.BuildControl {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5px 0;
+}
+
+.Label {
+  padding: 10px;
+  font-weight: 600;
+  width: 80px;
+  color: rgb(0, 0, 0);
+}
+
+.BuildControlBtnMore,
+.BuildControlBtnLess {
+    display: block;
+    font: inherit;
+    margin: 0 5px;
+    height: 30px;
+    width: 30px;
+    color: rgb(0, 0, 0);
+    border-radius: 100%;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    box-shadow: 0 2px px rgba(0, 0, 0, 0.6);
+    font-weight: 600;
+  }
+  
+  .BuildControlBtnMore:hover,
+  .BuildControlBtnLess:hover {
+    opacity: 75%;
+  }
+  .BuildControlBtnMore:focus,
+  .BuildControlBtnLess:focus {
+    outline: none;
+  }
+
+  .BuildControlBtnMore{
+       background-color: rgb(117, 223, 255); 
+  }
+  .BuildControlBtnLess{
+       background-color: rgb(255, 121, 121); 
+  }
