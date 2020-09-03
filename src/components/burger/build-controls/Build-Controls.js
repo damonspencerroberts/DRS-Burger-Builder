@@ -12,6 +12,8 @@ const buildControls = (props) =>
             lessClick = {() => props.ingDel(e.type)}
             disInfo = {props.disInfo[e.type]}
             />)}
+        <button className = {classes.ClearBtn}
+        onClick = {props.ingClear}>Clear Everything</button>
     </div>
 ;
 

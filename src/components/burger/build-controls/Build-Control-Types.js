@@ -16,7 +16,7 @@ const DiffControls = [
        type: "pickle"
     },
     {
-       label: "Meat",
+       label: "Patty",
        type: "patty"
     },
     {

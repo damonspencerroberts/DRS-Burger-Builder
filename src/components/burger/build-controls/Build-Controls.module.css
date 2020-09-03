@@ -11,9 +11,44 @@
     height: 300px;
     overflow: auto;
 }
+.BuildControls::-webkit-scrollbar {
+    width: 13px;
+    color: rgba(0, 0, 0, 0.63);
+    }
+
+.BuildControls::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5); 
+    height: 30px;
+}
 
 @media (max-width: 500px) {  
     .BuildControls {
         width: 450px;
     }
 }
+
+.ClearBtn {
+    border: none;
+    padding: 10px;
+    background: linear-gradient(rgb(127, 255, 77), rgb(98, 255, 36));
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 0.6rem !important;
+    width: 70px;
+    font: inherit;
+    box-shadow: 01px black;
+    cursor: pointer;
+    margin: 15px auto;
+  }
+
+  .ClearBtn:hover {
+    opacity: 75%;
+  }
+
+  .ClearBtn:focus {
+    outline: none;
+  }
+
+  

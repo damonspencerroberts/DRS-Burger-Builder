@@ -30,7 +30,7 @@ export default class BurgerBuilder extends Component {
         }
         this.handleAddIngredients = this.handleAddIngredients.bind(this);
         this.handleLessIngredients = this.handleLessIngredients.bind(this);
-
+        this.handleClear = this.handleClear.bind(this);
     }
 
     handleAddIngredients = (type) => {
@@ -61,8 +61,14 @@ export default class BurgerBuilder extends Component {
         this.setState({ingredients: dupState, priceTotal: newPrice.toFixed(2)})
     }
 
+    handleClear() {
+        const arr = [];
+        Object.keys(this.state.ingredients).map(e => arr.push(e));
+        const dupState = {...this.state.ingredients};
+        arr.map(e => dupState[e] = 0);
+        this.setState({ingredients: dupState, priceTotal: 4.00});
+    }
 
-    
     render() {
         //try to put neg values back to 0
         const disableInfo = {...this.state.ingredients};
@@ -78,6 +84,7 @@ export default class BurgerBuilder extends Component {
                 <BuildControls 
                     ingAdd = {this.handleAddIngredients}
                     ingDel = {this.handleLessIngredients}
+                    ingClear = {this.handleClear}
                     //if disable info is less than zero button will be disabled, and value wont cant go lower
                     disInfo = {disableInfo}
                 />
