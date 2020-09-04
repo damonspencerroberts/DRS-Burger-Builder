@@ -1,31 +1,38 @@
 const DiffControls = [
     {
        label: "Lettuce",
-       type: "lettuce"
+       type: "lettuce",
+       price: 0.50
     },
     {
        label: "Cheese",
-       type: "cheese"
+       type: "cheese",
+       price: 0.50
     },
     {
        label: "Bacon",
-       type: "bacon"
+       type: "bacon",
+       price: 1.50
     },
     {
        label: "Pickles",
-       type: "pickle"
+       type: "pickle",
+       price: 0.25
     },
     {
        label: "Patty",
-       type: "patty"
+       type: "patty",
+       price: 2.00
     },
     {
        label: "Onions",
-       type: "onion"
+       type: "onion",
+       price: 0.25
     },
     {
        label: "Tomato",
-       type: "tomato"
+       type: "tomato",
+       price: 0.25
     }
     
 ];

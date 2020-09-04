@@ -50,7 +50,6 @@ class BurgerIngredients extends Component {
             case('tomato'):
             ingredient = <div className = {ingStyles.Tomato}></div>
             break;
-            
             default:
                 ingredient = null;
 

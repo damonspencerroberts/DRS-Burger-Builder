@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, Fragment as Fr} from 'react';
 import classes from "./Burger.module.css"
 import BurgerIngredient from "./burger-ingredients/Burger-ingredients";
 
@@ -23,15 +23,17 @@ export default class Burger extends Component {
 
         const transLength = transIngredients.length;
                 
-        return  <div className = {classes.Burger}>
+        return  <Fr>
                     <div className = {classes.Price}><span>Price: ${this.props.totalPrice}</span></div>
-                    <BurgerIngredient type = "top-bun"/>
-                        {transLength === 0 ? 
-                            <h2 className = {classes.BurgerWarning}>{"Please Add Some Ingredients".toUpperCase()}</h2>
-                            :
-                            transIngredients}
-                    <BurgerIngredient type = "bottom-bun"/>
-                </div>
+                    <div className = {classes.Burger}>
+                        <BurgerIngredient type = "top-bun"/>
+                            {transLength === 0 ? 
+                                <h2 className = {classes.BurgerWarning}>{"Please Add Some Ingredients".toUpperCase()}</h2>
+                                :
+                                transIngredients}
+                        <BurgerIngredient type = "bottom-bun"/>
+                    </div>
+                </Fr>
     }
 }
     

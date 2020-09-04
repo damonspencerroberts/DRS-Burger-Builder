@@ -44,4 +44,9 @@
        background-color: rgb(255, 121, 121); 
   }
 
+  .Price {
+    padding: 5px;
+    margin: 5px;
+    font-style: italic;
+  }
   

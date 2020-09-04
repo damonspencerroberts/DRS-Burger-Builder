@@ -12,7 +12,7 @@ const EACH_PRICE = {
     onion: 0.25
 }
 
-export default class BurgerBuilder extends Component {
+class BurgerBuilder extends Component {
     constructor(props) {
         super(props)
 
@@ -26,11 +26,26 @@ export default class BurgerBuilder extends Component {
               cheese: 0,
               patty: 0
             },
-            priceTotal: 4.00
+            priceTotal: 4.00,
+            canPurchase: false
         }
         this.handleAddIngredients = this.handleAddIngredients.bind(this);
         this.handleLessIngredients = this.handleLessIngredients.bind(this);
         this.handleClear = this.handleClear.bind(this);
+        this.handleCanPurchase = this.handleCanPurchase.bind(this);
+
+    }
+
+    handleCanPurchase(dupState) {
+        const sum = Object.keys(dupState)
+        .map(e => {
+            return dupState[e];
+        }).reduce((sum, el) => {
+            return sum + el;
+        }, 0);
+
+        this.setState({canPurchase: sum > 0})
+        
     }
 
     handleAddIngredients = (type) => {
@@ -43,6 +58,8 @@ export default class BurgerBuilder extends Component {
         const curPrice = this.state.priceTotal;
         const newPrice = EACH_PRICE[type] + curPrice;
         this.setState({ingredients: dupState, priceTotal: newPrice})
+        this.handleCanPurchase(dupState);
+
     }
 
     handleLessIngredients = (type) => {
@@ -58,7 +75,9 @@ export default class BurgerBuilder extends Component {
 
         const curPrice = this.state.priceTotal;
         const newPrice = curPrice - EACH_PRICE[type];
-        this.setState({ingredients: dupState, priceTotal: newPrice.toFixed(2)})
+        this.setState({ingredients: dupState, priceTotal: newPrice})
+        this.handleCanPurchase(dupState);
+
     }
 
     handleClear() {
@@ -67,6 +86,8 @@ export default class BurgerBuilder extends Component {
         const dupState = {...this.state.ingredients};
         arr.map(e => dupState[e] = 0);
         this.setState({ingredients: dupState, priceTotal: 4.00});
+        this.handleCanPurchase(dupState);
+
     }
 
     render() {
@@ -82,13 +103,18 @@ export default class BurgerBuilder extends Component {
                     totalPrice = {this.state.priceTotal}
                 />
                 <BuildControls 
+                    ingPrice = {this.state.priceTotal}
                     ingAdd = {this.handleAddIngredients}
                     ingDel = {this.handleLessIngredients}
                     ingClear = {this.handleClear}
                     //if disable info is less than zero button will be disabled, and value wont cant go lower
                     disInfo = {disableInfo}
+                    disOrder = {this.state.canPurchase}
                 />
             </Fr>
         )
     }
 }
+
+export default BurgerBuilder;
+
