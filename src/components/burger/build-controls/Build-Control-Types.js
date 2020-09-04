@@ -15,6 +15,11 @@ const DiffControls = [
        price: 1.50
     },
     {
+       label: "Egg",
+       type: "egg",
+       price: 1.25
+    },
+    {
        label: "Pickles",
        type: "pickle",
        price: 0.25

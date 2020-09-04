@@ -35,6 +35,10 @@ class BurgerIngredients extends Component {
             ingredient = <div className = {ingStyles.Bacon} ></div>
             break;
 
+            case('egg'):
+            ingredient = <div className = {ingStyles.Egg}><div className = {ingStyles.Yolk}></div></div>
+            break;
+
             case('pickle'):
             ingredient = <Fr><div className = {ingStyles.Pickles}></div>
                 <div className = {ingStyles.Pickles}></div>
@@ -44,7 +48,10 @@ class BurgerIngredients extends Component {
             break;
 
             case('onion'):
-            ingredient = <div className = {ingStyles.Onion}></div>
+            ingredient = <Fr>
+            <div className = {ingStyles.Onion}></div>
+            <div className = {ingStyles.Onion}></div>
+            </Fr>
             break;
 
             case('tomato'):

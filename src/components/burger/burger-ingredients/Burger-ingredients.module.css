@@ -114,7 +114,7 @@
 
 .Pickles {
     width: 15%;
-    margin: 2% 2% 2% 0;
+    margin: 2%;
     background: linear-gradient(#033a00, #81c539);
     height: 2%;
     display: inline-block;
@@ -122,15 +122,33 @@
 }
 .Tomato {
   width: 80%;
-  background: linear-gradient(#F13233, #ff0d11);
-  height: 4%;
+  background: linear-gradient(#a00000, #ff0d11);
+  height: 3%;
   margin: 2% auto;
   }
 
 .Onion {
-  width: 80%;
+  width: 40%;
   background: linear-gradient(#6b153c, #ff3690);
-  height: 3%;
+  height: 2%;
   border-radius: 10px;
-  margin: 2% auto;
+  margin: 2%;
+  display: inline-block;
+  }
+
+  .Egg {
+    width: 80%;
+    height: 4%;
+    background: linear-gradient(#eee8da 80%, #afa38b);
+    border-radius: 100%;
+    border: 2px solid black;
+    margin: 2% auto;
+  }
+
+  .Yolk {
+    width: 20%;
+    height: 100%;
+    margin: 0 auto;
+    background: linear-gradient(#f7e77b 40%, #d2b419 70%, #d2b419 100%);
+    border-radius: 100%;
   }

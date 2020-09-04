@@ -5,6 +5,7 @@ import BuildControls from "../../components/burger/build-controls/Build-Controls
 const EACH_PRICE = {
     lettuce: 0.50,
     bacon: 1.50,
+    egg: 1.25,
     pickle: 0.25,
     cheese: 0.50,
     patty: 2.00,
@@ -20,6 +21,7 @@ class BurgerBuilder extends Component {
             ingredients: {
               lettuce: 0,
               bacon: 0,
+              egg: 0,
               tomato: 0, 
               pickle: 0,
               onion: 0,
