@@ -1,6 +1,8 @@
 import React, { Component, Fragment as Fr } from 'react';
 import Burger from "../../components/burger/Burger";
 import BuildControls from "../../components/burger/build-controls/Build-Controls";
+import Modal from "../../components/User-Interface/Modal/Modal";
+import OrderSummary from "../../components/burger/order-summary/Order-Summary";
 
 const EACH_PRICE = {
     lettuce: 0.50,
@@ -29,7 +31,8 @@ class BurgerBuilder extends Component {
               patty: 0
             },
             priceTotal: 4.00,
-            canPurchase: false
+            canPurchase: false,
+            showOrderSummary: false
         }
         this.handleAddIngredients = this.handleAddIngredients.bind(this);
         this.handleLessIngredients = this.handleLessIngredients.bind(this);
@@ -104,6 +107,8 @@ class BurgerBuilder extends Component {
                 <Burger ingredients = {this.state.ingredients}
                     totalPrice = {this.state.priceTotal}
                 />
+                {this.state.showOrderSummary === true ? <Modal><OrderSummary ingState = {this.state.ingredients}/></Modal>
+                :null}
                 <BuildControls 
                     ingPrice = {this.state.priceTotal}
                     ingAdd = {this.handleAddIngredients}

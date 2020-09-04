@@ -1,0 +1,21 @@
+import React, {Fragment as Fr} from 'react';
+import classes from "./Order-summary.module.css";
+
+const OrderSummary = (props) => {
+
+    const orderList = Object.keys(props.ingState).map(e => {
+        return <li><span className = {classes.LabelCap}>{e}</span>: {props.ingState[e]}</li>
+    })
+
+    return <Fr>
+        <h3>Order Summary</h3>
+        <p>Here is a summary of your delicious burger:</p>
+        <ul>
+            {orderList}
+        </ul>
+        <h4>Finalize your order?</h4>
+        <button className = {classes.OsBtn}>COMPLETE ORDER</button>
+    </Fr>
+}
+
+export default OrderSummary;
