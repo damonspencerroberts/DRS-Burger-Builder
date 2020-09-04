@@ -113,13 +113,13 @@ class BurgerBuilder extends Component {
                     totalPrice = {this.state.priceTotal}
                 />
 
-                {this.state.showOrderSummary === true ? <Modal>
+                <Modal show = {this.state.showOrderSummary}>
                     <OrderSummary 
                         ingState = {this.state.ingredients} 
                         priceState = {this.state.priceTotal}
                         exitOsClick = {this.handleOs}
                     />
-                    </Modal>:null}
+                </Modal>
 
                 <BuildControls 
                     ingPrice = {this.state.priceTotal}

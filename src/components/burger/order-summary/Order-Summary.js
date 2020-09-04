@@ -4,7 +4,7 @@ import classes from "./Order-summary.module.css";
 const OrderSummary = (props) => {
 
     const orderList = Object.keys(props.ingState).map(e => {
-        return <li><span className = {classes.LabelCap}>{e}</span>: {props.ingState[e]}</li>
+        return <li key = {e + "chinea199393"}><span className = {classes.LabelCap}>{e}</span>: {props.ingState[e]}</li>
     })
 
     return <Fr>
