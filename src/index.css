@@ -4,3 +4,16 @@ body {
   font-family: 'Poppins', sans-serif;
   background-color: rgb(233, 233, 233);
 }
+
+body::-webkit-scrollbar {
+  width: 20px;
+  background: rgba(0, 0, 0, 0);
+  }
+
+body::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+  background: #a1a1a1;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5); 
+  height: 30px;
+}
