@@ -167,26 +167,26 @@
   .Mayo, 
   .Ketchup, 
   .Mustard {
-    width: 15%;
-    margin: 2%;
-    height: 2%;
+    width: 80%;
+    margin: 0 auto;
+    height: 3%;
     border-radius: 100%;
     display: inline-block;
   }
   
   .Bbq {
-    background: linear-gradient(120deg, white, rgb(92, 55, 24) 40%)
+    background: rgb(110, 84, 63);
   }
   
   .Mayo {
     border: 1px solid black;
-    background: linear-gradient(120deg, white, rgb(224, 224, 224) 40% )
+    background:  rgb(224, 224, 224);
   }
   
   .Ketchup {
-    background: linear-gradient(120deg, white, red 40% )
+    background: rgb(255, 0, 0);
   }
   
   .Mustard {
-    background: linear-gradient( 120deg, white, yellow 40% )
+    background:rgb(255, 255, 0);
   }

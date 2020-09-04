@@ -146,7 +146,7 @@ class BurgerBuilder extends Component {
                 {this.state.showConfirmation ? <Confetti /> : null}
                 <Burger 
                     ingredients = {this.state.ingredients}
-                    totalPrice = {this.state.priceTotal}
+                    totalPrice = {this.state.priceTotal.toFixed(2)}
                     burgerClick = {this.handleBurgerScale}
                     scaleBurger = {this.state.burgerScale}
                     />
@@ -165,7 +165,7 @@ class BurgerBuilder extends Component {
                 </Modal>
 
                 <BuildControls 
-                    ingPrice = {this.state.priceTotal}
+                    ingPrice = {this.state.priceTotal.toFixed(2)}
                     ingAdd = {this.handleAddIngredients}
                     ingDel = {this.handleLessIngredients}
                     ingClear = {this.handleClear}

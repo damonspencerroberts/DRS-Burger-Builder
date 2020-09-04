@@ -62,36 +62,20 @@ class BurgerIngredients extends Component {
             ingredient = <div className = {ingStyles.Chicken}></div>
             break;
 
-            case('mustard'):
-            ingredient = <Fr><div class = {ingStyles.Mustard}></div>
-            <div class = {ingStyles.Mustard}></div>
-            <div class = {ingStyles.Mustard}></div>
-            <div class = {ingStyles.Mustard}></div>
-            <div class = {ingStyles.Mustard}></div></Fr>
-            break;
-            
             case('bbq'):
-            ingredient = <Fr><div class = {ingStyles.Bbq}></div>
-            <div class = {ingStyles.Bbq}></div>
-            <div class = {ingStyles.Bbq}></div>
-            <div class = {ingStyles.Bbq}></div>
-            <div class = {ingStyles.Bbq}></div></Fr>
+            ingredient = <div className = {ingStyles.Bbq}></div>
+            break;
+
+            case('mustard'):
+            ingredient = <div className = {ingStyles.Mustard}></div>
             break;
 
             case('ketchup'):
-            ingredient = <Fr><div class = {ingStyles.Ketchup}></div>
-            <div class = {ingStyles.Ketchup}></div>
-            <div class = {ingStyles.Ketchup}></div>
-            <div class = {ingStyles.Ketchup}></div>
-            <div class = {ingStyles.Ketchup}></div></Fr>
+            ingredient = <div className = {ingStyles.Ketchup}></div>
             break;
 
             case('mayo'):
-            ingredient = <Fr><div class = {ingStyles.Mayo}></div>
-            <div class = {ingStyles.Mayo}></div>
-            <div class = {ingStyles.Mayo}></div>
-            <div class = {ingStyles.Mayo}></div>
-            <div class = {ingStyles.Mayo}></div></Fr>
+            ingredient = <div className = {ingStyles.Mayo}></div>
             break;
 
             default:

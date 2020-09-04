@@ -39,10 +39,10 @@
   }
 
   .BuildControlBtnMore{
-       background: linear-gradient( rgb(155, 232, 255) 30%, rgb(78, 214, 255) 65%, rgb(37, 204, 255) 100%); 
+       background: linear-gradient( #76fffd 30%, #1efffa 65%, #00fffb 100%); 
   }
   .BuildControlBtnLess{
-       background: linear-gradient( rgb(255, 143, 143) 30%, rgb(255, 94, 94) 65%, rgb(255, 62, 62) 100%); 
+       background: linear-gradient( #ff61ff 30%, #e506e5 65%, #a100a1 100%); 
   }
 
   .Price {
