@@ -115,8 +115,8 @@
 .Pickles {
     width: 15%;
     margin: 2%;
-    background: linear-gradient(#033a00, #81c539);
     height: 2%;
+    background: linear-gradient(#033a00, #81c539);
     display: inline-block;
     border-radius: 20px;
 }
@@ -151,4 +151,42 @@
     margin: 0 auto;
     background: linear-gradient(#f7e77b 40%, #d2b419 70%, #d2b419 100%);
     border-radius: 100%;
+  }
+
+  .Chicken {
+    width: 80%;
+    height: 8%;
+    background: linear-gradient(90deg, #e19230, #c65a03 70%),
+              linear-gradient(200deg, #e19230, #c65a03 80%),
+              linear-gradient(90deg, #c65a03, #e19230 100%);
+    border-radius: 15px;
+    margin: 2% auto;
+  } 
+
+  .Bbq, 
+  .Mayo, 
+  .Ketchup, 
+  .Mustard {
+    width: 15%;
+    margin: 2%;
+    height: 2%;
+    border-radius: 100%;
+    display: inline-block;
+  }
+  
+  .Bbq {
+    background: linear-gradient(120deg, white, rgb(92, 55, 24) 40%)
+  }
+  
+  .Mayo {
+    border: 1px solid black;
+    background: linear-gradient(120deg, white, rgb(224, 224, 224) 40% )
+  }
+  
+  .Ketchup {
+    background: linear-gradient(120deg, white, red 40% )
+  }
+  
+  .Mustard {
+    background: linear-gradient( 120deg, white, yellow 40% )
   }

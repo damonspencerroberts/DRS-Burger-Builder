@@ -57,6 +57,43 @@ class BurgerIngredients extends Component {
             case('tomato'):
             ingredient = <div className = {ingStyles.Tomato}></div>
             break;
+
+            case('chicken'):
+            ingredient = <div className = {ingStyles.Chicken}></div>
+            break;
+
+            case('mustard'):
+            ingredient = <Fr><div class = {ingStyles.Mustard}></div>
+            <div class = {ingStyles.Mustard}></div>
+            <div class = {ingStyles.Mustard}></div>
+            <div class = {ingStyles.Mustard}></div>
+            <div class = {ingStyles.Mustard}></div></Fr>
+            break;
+            
+            case('bbq'):
+            ingredient = <Fr><div class = {ingStyles.Bbq}></div>
+            <div class = {ingStyles.Bbq}></div>
+            <div class = {ingStyles.Bbq}></div>
+            <div class = {ingStyles.Bbq}></div>
+            <div class = {ingStyles.Bbq}></div></Fr>
+            break;
+
+            case('ketchup'):
+            ingredient = <Fr><div class = {ingStyles.Ketchup}></div>
+            <div class = {ingStyles.Ketchup}></div>
+            <div class = {ingStyles.Ketchup}></div>
+            <div class = {ingStyles.Ketchup}></div>
+            <div class = {ingStyles.Ketchup}></div></Fr>
+            break;
+
+            case('mayo'):
+            ingredient = <Fr><div class = {ingStyles.Mayo}></div>
+            <div class = {ingStyles.Mayo}></div>
+            <div class = {ingStyles.Mayo}></div>
+            <div class = {ingStyles.Mayo}></div>
+            <div class = {ingStyles.Mayo}></div></Fr>
+            break;
+
             default:
                 ingredient = null;
 
