@@ -25,13 +25,16 @@ export default class Burger extends Component {
                 
         return  <Fr>
                     <div className = {classes.Price}><span>Price: ${this.props.totalPrice}</span></div>
-                    <div className = {classes.Burger}>
+                    <div className = {`${classes.Burger} ${this.props.scaleBurger ? classes.ScaleBurger : null}`} 
+                    onClick = {this.props.burgerClick}>
                         <BurgerIngredient type = "top-bun"/>
                             {transLength === 0 ? 
                                 <h2 className = {classes.BurgerWarning}>{"Please Add Some Ingredients".toUpperCase()}</h2>
                                 :
                                 transIngredients}
                         <BurgerIngredient type = "bottom-bun"/>
+                        {this.props.scaleBurger ? <button onClick = {this.props.burgerClick}
+                        className = {classes.Btn}>X</button> : null}
                     </div>
                 </Fr>
     }

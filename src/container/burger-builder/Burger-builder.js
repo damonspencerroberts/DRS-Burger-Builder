@@ -32,14 +32,19 @@ class BurgerBuilder extends Component {
             },
             priceTotal: 4.00,
             canPurchase: false,
-            showOrderSummary: false
+            showOrderSummary: false,
+            burgerScale: false
         }
         this.handleAddIngredients = this.handleAddIngredients.bind(this);
         this.handleLessIngredients = this.handleLessIngredients.bind(this);
         this.handleClear = this.handleClear.bind(this);
         this.handleCanPurchase = this.handleCanPurchase.bind(this);
         this.handleOs = this.handleOs.bind(this);
+        this.handleBurgerScale = this.handleBurgerScale.bind(this);
+    }
 
+    handleBurgerScale() {
+        this.setState({burgerScale: !this.state.burgerScale})
     }
 
     handleOs() {
@@ -109,11 +114,17 @@ class BurgerBuilder extends Component {
 
         return (
             <Fr>
-                <Burger ingredients = {this.state.ingredients}
+                <Burger 
+                    ingredients = {this.state.ingredients}
                     totalPrice = {this.state.priceTotal}
-                />
+                    burgerClick = {this.handleBurgerScale}
+                    scaleBurger = {this.state.burgerScale}
+                    />
 
-                <Modal show = {this.state.showOrderSummary}>
+                <Modal 
+                    show = {this.state.showOrderSummary}
+                    backdropClick = {this.handleOs}
+                    >
                     <OrderSummary 
                         ingState = {this.state.ingredients} 
                         priceState = {this.state.priceTotal}
