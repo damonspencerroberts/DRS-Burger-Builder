@@ -30,7 +30,8 @@
   
   .BuildControlBtnMore:hover,
   .BuildControlBtnLess:hover {
-    opacity: 75%;
+    opacity: 70%;
+
   }
   .BuildControlBtnMore:focus,
   .BuildControlBtnLess:focus {
@@ -38,10 +39,10 @@
   }
 
   .BuildControlBtnMore{
-       background-color: rgb(117, 223, 255); 
+       background: linear-gradient( rgb(155, 232, 255) 30%, rgb(78, 214, 255) 65%, rgb(37, 204, 255) 100%); 
   }
   .BuildControlBtnLess{
-       background-color: rgb(255, 121, 121); 
+       background: linear-gradient( rgb(255, 143, 143) 30%, rgb(255, 94, 94) 65%, rgb(255, 62, 62) 100%); 
   }
 
   .Price {

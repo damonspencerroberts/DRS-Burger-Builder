@@ -16,6 +16,7 @@ export default class BuildControls extends Component {
                         eachPrice = {e.price.toFixed(2)}
                         />)}
                     <button className = {classes.OrderBtn}
+                    onClick = {this.props.ingOrder}
                     disabled = {!this.props.disOrder}>ORDER NOW</button>
                     {!this.props.disOrder === true ? <p className = {classes.Error}>YOU MUST ADD INGREDIENTS TO ORDER</p>: null}
                     <button className = {classes.ClearBtn}

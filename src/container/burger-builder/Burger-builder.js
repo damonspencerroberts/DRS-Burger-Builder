@@ -38,7 +38,12 @@ class BurgerBuilder extends Component {
         this.handleLessIngredients = this.handleLessIngredients.bind(this);
         this.handleClear = this.handleClear.bind(this);
         this.handleCanPurchase = this.handleCanPurchase.bind(this);
+        this.handleOs = this.handleOs.bind(this);
 
+    }
+
+    handleOs() {
+        this.setState({showOrderSummary: !this.state.showOrderSummary})
     }
 
     handleCanPurchase(dupState) {
@@ -107,14 +112,22 @@ class BurgerBuilder extends Component {
                 <Burger ingredients = {this.state.ingredients}
                     totalPrice = {this.state.priceTotal}
                 />
-                {this.state.showOrderSummary === true ? <Modal><OrderSummary ingState = {this.state.ingredients}/></Modal>
-                :null}
+
+                {this.state.showOrderSummary === true ? <Modal>
+                    <OrderSummary 
+                        ingState = {this.state.ingredients} 
+                        priceState = {this.state.priceTotal}
+                        exitOsClick = {this.handleOs}
+                    />
+                    </Modal>:null}
+
                 <BuildControls 
                     ingPrice = {this.state.priceTotal}
                     ingAdd = {this.handleAddIngredients}
                     ingDel = {this.handleLessIngredients}
                     ingClear = {this.handleClear}
                     //if disable info is less than zero button will be disabled, and value wont cant go lower
+                    ingOrder = {this.handleOs}
                     disInfo = {disableInfo}
                     disOrder = {this.state.canPurchase}
                 />
