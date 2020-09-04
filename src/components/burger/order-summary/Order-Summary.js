@@ -1,5 +1,6 @@
 import React, {Fragment as Fr} from 'react';
 import classes from "./Order-summary.module.css";
+import ExitButton from "../exit-button/Exit-button";
 
 const OrderSummary = (props) => {
 
@@ -15,8 +16,8 @@ const OrderSummary = (props) => {
         </ul>
         <h5>Order Total: ${props.priceState.toFixed(2)}</h5>
         <h4>Finalize your order?</h4>
-        <button className = {classes.OsBtn}>COMPLETE ORDER</button>
-        <button className = {classes.Btn} onClick = {props.exitOsClick}>X</button>
+        <button className = {classes.OsBtn} onClick = {props.finalClick}>COMPLETE ORDER</button>
+        <ExitButton exitClick = {props.exitOsClick}>X</ExitButton>
     </Fr>
 }
 

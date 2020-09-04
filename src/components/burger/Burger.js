@@ -1,6 +1,8 @@
 import React, {Component, Fragment as Fr} from 'react';
 import classes from "./Burger.module.css"
 import BurgerIngredient from "./burger-ingredients/Burger-ingredients";
+import ExitButton from "./exit-button/Exit-button";
+
 
 /**
  * This takes the state object ingredients from burger builder uses the keys.
@@ -33,8 +35,8 @@ export default class Burger extends Component {
                                 :
                                 transIngredients}
                         <BurgerIngredient type = "bottom-bun"/>
-                        {this.props.scaleBurger ? <button onClick = {this.props.burgerClick}
-                        className = {classes.Btn}>X</button> : null}
+                        {this.props.scaleBurger ? <ExitButton exitClick = {this.props.burgerClick}
+                        className = {classes.Btn}>X</ExitButton> : null}
                     </div>
                 </Fr>
     }

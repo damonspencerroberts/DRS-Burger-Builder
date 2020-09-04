@@ -1,8 +1,12 @@
+/* eslint-disable jsx-a11y/accessible-emoji */
 import React, { Component, Fragment as Fr } from 'react';
 import Burger from "../../components/burger/Burger";
 import BuildControls from "../../components/burger/build-controls/Build-Controls";
 import Modal from "../../components/User-Interface/Modal/Modal";
 import OrderSummary from "../../components/burger/order-summary/Order-Summary";
+import ExitButton from "../../components/burger/exit-button/Exit-button";
+import Confetti from "../../components/User-Interface/Confetti/Confetti";
+
 
 const EACH_PRICE = {
     lettuce: 0.50,
@@ -33,7 +37,8 @@ class BurgerBuilder extends Component {
             priceTotal: 4.00,
             canPurchase: false,
             showOrderSummary: false,
-            burgerScale: false
+            burgerScale: false,
+            showConfirmation: false
         }
         this.handleAddIngredients = this.handleAddIngredients.bind(this);
         this.handleLessIngredients = this.handleLessIngredients.bind(this);
@@ -41,6 +46,20 @@ class BurgerBuilder extends Component {
         this.handleCanPurchase = this.handleCanPurchase.bind(this);
         this.handleOs = this.handleOs.bind(this);
         this.handleBurgerScale = this.handleBurgerScale.bind(this);
+        this.handleFinalPurchase = this.handleFinalPurchase.bind(this);
+        this.showConfirm = this.showConfirm.bind(this);
+    }
+
+    showConfirm() {
+        this.setState({showConfirmation: !this.state.showConfirmation})
+        if (this.state.showConfirmation) {
+            this.handleClear()
+        }
+    }
+
+    handleFinalPurchase() {
+        this.setState({showOrderSummary: !this.state.showOrderSummary});
+        this.showConfirm(); 
     }
 
     handleBurgerScale() {
@@ -114,6 +133,7 @@ class BurgerBuilder extends Component {
 
         return (
             <Fr>
+                {this.state.showConfirmation ? <Confetti /> : null}
                 <Burger 
                     ingredients = {this.state.ingredients}
                     totalPrice = {this.state.priceTotal}
@@ -124,11 +144,13 @@ class BurgerBuilder extends Component {
                 <Modal 
                     show = {this.state.showOrderSummary}
                     backdropClick = {this.handleOs}
+                    translate = 'translateY(-100vh)'
                     >
                     <OrderSummary 
                         ingState = {this.state.ingredients} 
                         priceState = {this.state.priceTotal}
                         exitOsClick = {this.handleOs}
+                        finalClick = {this.handleFinalPurchase}
                     />
                 </Modal>
 
@@ -142,6 +164,17 @@ class BurgerBuilder extends Component {
                     disInfo = {disableInfo}
                     disOrder = {this.state.canPurchase}
                 />
+                
+                {this.state.showConfirmation ? <Modal 
+                        show = {this.state.showConfirmation} 
+                        backdropClick = {this.showConfirm}
+                        translate = 'translateX(-100vh)'
+                        >   
+                            <h3 style ={{color: "red"}}>Confirmation!</h3>
+                            <h2>Enjoy your juicy burger!<span>🍔😍😋</span></h2> 
+                            <h4>Your final order total was ${this.state.priceTotal.toFixed(2)}!</h4>
+                            <ExitButton exitClick = {this.showConfirm}/>
+                        </Modal> : null}
             </Fr>
         )
     }
