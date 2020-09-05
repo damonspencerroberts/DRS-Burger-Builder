@@ -23,3 +23,26 @@
     border-bottom: 4px solid #3a3a3a;
     background-color: #00fffb81;
 }
+
+@media (min-width: 500px) {
+    .NavItem {
+        margin: 10px 0;
+        box-sizing: border-box;
+        display: block;
+        width: 100%;
+    }
+    
+    .NavItem a {
+        color: black;
+        text-decoration: none;
+        width: 100%;
+        box-sizing: border-box;
+        display: block;
+    }
+    
+    .NavItem a:hover,
+    .NavItem a:active,
+    .NavItem a.active {
+        color: #ff00ff;
+    }
+}
