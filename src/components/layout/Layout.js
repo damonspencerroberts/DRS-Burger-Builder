@@ -38,8 +38,8 @@ class Layout extends Component {
     export default Layout;
 
     /**
-     * fix logo on small screen
-     * fix size of burger on small
-     * fix size of order burgers, ordersum, and confirmation on small
+     * 
+     * fix x button
+     * fix bbq
      */
 

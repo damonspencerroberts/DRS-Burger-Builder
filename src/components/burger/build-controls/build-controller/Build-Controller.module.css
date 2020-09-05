@@ -1,3 +1,16 @@
+@media (max-width: 499px) {
+  .Label {
+    padding: 6px !important;
+  }
+  .BuildControlBtnMore,
+  .BuildControlBtnLess {
+    height: 25px !important;
+    width: 25px !important;
+    font-size: 0.9rem !important;
+  }
+
+}
+
 .BuildControl {
     display: flex;
     justify-content: space-between;
@@ -10,6 +23,7 @@
   font-weight: 600;
   width: 80px;
   color: rgb(0, 0, 0);
+  text-shadow: 1px 1px #ff51ff; 
 }
 
 .BuildControlBtnMore,
@@ -49,5 +63,6 @@
     padding: 5px;
     margin: 5px;
     font-style: italic;
+    text-shadow: 1px 1px #ff51ff;
   }
   

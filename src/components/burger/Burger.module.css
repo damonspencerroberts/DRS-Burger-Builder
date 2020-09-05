@@ -27,6 +27,17 @@
         height: 300px;
     }
 }
+@media (max-width: 499px){
+    .ScaleBurger {
+        transform: none !important;
+        overflow: none !important;
+    }
+
+    .Price {
+        width: 60% !important;
+        margin-bottom: 5% !important;
+    }
+}
 
 .Burger::-webkit-scrollbar {
     width: 5px;
@@ -53,16 +64,18 @@
 
 .BurgerWarning {
     font-weight: 600;
-    color: red;
+    color: black;
+    text-shadow: 1px 1px #ff51ff; 
     letter-spacing: 1px;
 }
 
 
 .Price {
-    border: 1px solid green;
-    padding: 3px;
+    border: 1px solid #ff51ff;
+    text-shadow: 1px 1px #ff51ff;
+    padding: 10px 3px 4px 3px;
     border-radius: 5px;
-    box-shadow: 0px 2px 1px black;
+    box-shadow: 1px 1px #1efffa;
     width: 20%;
     text-align: center;
     margin: 0 auto 2% auto;
@@ -72,4 +85,5 @@
     font-size: 2rem;
     font-weight: 600;
     letter-spacing: 1.5px;
+    padding: 2px;
 }

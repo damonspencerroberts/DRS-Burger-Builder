@@ -141,6 +141,8 @@ class BurgerBuilder extends Component {
             disableInfo[key] = disableInfo[key] <= 0;
         }
 
+        const screenSmall = window.innerWidth < 499;
+
         return (
             <Fr>
                 {this.state.showConfirmation ? <Confetti /> : null}
@@ -179,11 +181,13 @@ class BurgerBuilder extends Component {
                         show = {this.state.showConfirmation} 
                         backdropClick = {this.showConfirm}
                         translate = 'translateX(-100vh)'
-                        >   
-                            <h3 style ={{color: "red"}}>Confirmation!</h3>
-                            <h2>Enjoy your juicy burger!<span>🍔😍😋</span></h2> 
-                            <h4>Your final order total was ${this.state.priceTotal.toFixed(2)}!</h4>
-                            <ExitButton exitClick = {this.showConfirm}/>
+                        width = {screenSmall ? '250px' : "450px"}
+                        >   <div style = {{textShadow: "1px 1px #ff51ff"}}>
+                                <h3 style ={{color: "red"}}>Confirmation!</h3>
+                                <h2>Enjoy your juicy burger!<span>🍔😍😋</span></h2> 
+                                <h4>Your final order total was ${this.state.priceTotal.toFixed(2)}!</h4>
+                                <ExitButton exitClick = {this.showConfirm}/>
+                            </div>
                         </Modal> : null}
             </Fr>
         )
