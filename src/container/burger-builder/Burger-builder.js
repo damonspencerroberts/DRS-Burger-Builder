@@ -1,11 +1,10 @@
-/* eslint-disable jsx-a11y/accessible-emoji */
 import React, { Component, Fragment as Fr } from 'react';
 import Burger from "../../components/burger/Burger";
 import BuildControls from "../../components/burger/build-controls/Build-Controls";
 import Modal from "../../components/User-Interface/Modal/Modal";
 import OrderSummary from "../../components/burger/order-summary/Order-Summary";
-import ExitButton from "../../components/burger/exit-button/Exit-button";
 import Confetti from "../../components/User-Interface/Confetti/Confetti";
+import OrderConfirmation from "../../components/burger/order-confirmation/Order-confirmation";
 
 
 const EACH_PRICE = {
@@ -182,12 +181,11 @@ class BurgerBuilder extends Component {
                         backdropClick = {this.showConfirm}
                         translate = 'translateX(-100vh)'
                         width = {screenSmall ? '250px' : "450px"}
-                        >   <div style = {{textShadow: "1px 1px #ff51ff"}}>
-                                <h3 style ={{color: "red"}}>Confirmation!</h3>
-                                <h2>Enjoy your juicy burger!<span>🍔😍😋</span></h2> 
-                                <h4>Your final order total was ${this.state.priceTotal.toFixed(2)}!</h4>
-                                <ExitButton exitClick = {this.showConfirm}/>
-                            </div>
+                        >   
+                        <OrderConfirmation 
+                            showConfirm = {this.showConfirm}
+                            priceTotal = {this.state.priceTotal.toFixed(2)}
+                        />
                         </Modal> : null}
             </Fr>
         )

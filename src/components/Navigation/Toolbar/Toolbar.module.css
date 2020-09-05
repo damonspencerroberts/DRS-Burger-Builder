@@ -21,16 +21,13 @@
     height: 90%;
 }
 
-.Menu,
-.Icon {
+.Menu {
     text-shadow: 1px 1px #ff51ff;
     color: black;
     font-weight: 600;
 }
 
-.Icon:hover {
-    color: #1efffa;
-}
+
 
 @media (max-width: 499px) {
     .DesktopOnly {

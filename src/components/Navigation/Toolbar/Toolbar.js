@@ -16,7 +16,10 @@ const Toolbar = (props) => {
             onClick = {props.menuClick} 
             className = {classes.Menu}
             >
-            <i className="fas fa-ellipsis-h"></i>
+            <i style ={{
+                color: "#ff51ff", 
+                textShadow: "1px 1px #1efffa",
+                transform: "rotate(270deg)"}} className="fas fa-chevron-circle-down fa-2x"></i>
             </div> : <header  className = {classes.Menu}>DRS Burger</header>}
         <div className = {classes.Logo}><Logo/></div>
         <nav className = {classes.DesktopOnly}>
