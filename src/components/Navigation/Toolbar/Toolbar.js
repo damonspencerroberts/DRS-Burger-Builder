@@ -7,13 +7,22 @@ import NavigationItems from "../navigation-items/Navigation-items";
 
 
 
-const Toolbar = (props) => 
-    <header className = {classes.Toolbar}>
-        <div>MENU</div>
+const Toolbar = (props) => {
+
+    const screenSmall = window.innerWidth < 500;
+    return <header className = {classes.Toolbar}>
+        {screenSmall ? 
+            <div 
+            onClick = {props.menuClick} 
+            className = {classes.Menu}
+            >
+            <i className="fas fa-ellipsis-h"></i>
+            </div> : <header  className = {classes.Menu}>DRS Burger</header>}
         <div className = {classes.Logo}><Logo/></div>
-        <nav>
+        <nav className = {classes.DesktopOnly}>
             <NavigationItems/>
         </nav>
     </header>
+}
 
 export default Toolbar;
