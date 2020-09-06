@@ -7,6 +7,8 @@ import Confetti from "../../components/User-Interface/Confetti/Confetti";
 import OrderConfirmation from "../../components/burger/order-confirmation/Order-confirmation";
 import axios from "../../axios-orders";
 import {EachPrice, DefaultIngredients} from "./ing-price-json";
+import StartOrder from "../../components/burger/start-order/start-order";
+import Spinner from "../../components/burger/spinner/Spinner";
 
 const EACH_PRICE = EachPrice;
 
@@ -20,7 +22,9 @@ class BurgerBuilder extends Component {
             canPurchase: false,
             showOrderSummary: false,
             burgerScale: false,
-            showConfirmation: false
+            showConfirmation: false,
+            startingOrder: false,
+            showSpinner: false
         }
         this.handleAddIngredients = this.handleAddIngredients.bind(this);
         this.handleLessIngredients = this.handleLessIngredients.bind(this);
@@ -30,6 +34,11 @@ class BurgerBuilder extends Component {
         this.handleBurgerScale = this.handleBurgerScale.bind(this);
         this.handleFinalPurchase = this.handleFinalPurchase.bind(this);
         this.showConfirm = this.showConfirm.bind(this);
+        this.startOrder = this.startOrder.bind(this);
+    }
+
+    startOrder() {
+        this.setState({startingOrder: true})    
     }
 
     showConfirm() {
@@ -45,11 +54,11 @@ class BurgerBuilder extends Component {
         const dupState = {
             ...this.state.ingredients
         }
-        
+
         let newIng = {};
         // eslint-disable-next-line array-callback-return
         Object.keys(dupState).map(e => {
-            if (dupState[e] > 0 ) {
+            if ( dupState[e] > 0 ) {
                 newIng[e] = dupState[e]
             }
         });
@@ -72,12 +81,13 @@ class BurgerBuilder extends Component {
                 method: "delivery"
             }
         }
-        
+        this.setState({showSpinner: true})
+
         axios.post('/orders.json', order)
             .then(response => 
-                console.log(response))
+                this.setState({showSpinner: false, canPurchase: false}))
             .catch(error =>
-                console.log(error));
+                this.setState({showSpinner: false, canPurchase: false}));
 
         this.setState({showOrderSummary: !this.state.showOrderSummary});
         this.showConfirm(); 
@@ -171,14 +181,14 @@ class BurgerBuilder extends Component {
                     translate = 'translateY(-100vh)'
                     >
                     <OrderSummary 
-                        ingState = {this.state.ingredients} 
-                        priceState = {this.state.priceTotal}
-                        exitOsClick = {this.handleOs}
-                        finalClick = {this.handleFinalPurchase}
-                    />
+                    ingState = {this.state.ingredients} 
+                    priceState = {this.state.priceTotal}
+                    exitOsClick = {this.handleOs}
+                    finalClick = {this.handleFinalPurchase}
+                    />     
                 </Modal>
 
-                <BuildControls 
+                {!this.state.startingOrder ? <StartOrder startBtn = {this.startOrder} /> : <BuildControls 
                     ingPrice = {this.state.priceTotal.toFixed(2)}
                     ingAdd = {this.handleAddIngredients}
                     ingDel = {this.handleLessIngredients}
@@ -187,19 +197,19 @@ class BurgerBuilder extends Component {
                     ingOrder = {this.handleOs}
                     disInfo = {disableInfo}
                     disOrder = {this.state.canPurchase}
-                />
+                />}
                 
-                {this.state.showConfirmation ? <Modal 
+                    <Modal 
                         show = {this.state.showConfirmation} 
                         backdropClick = {this.showConfirm}
                         translate = 'translateX(-100vh)'
                         width = {screenSmall ? '250px' : "450px"}
                         >   
-                        <OrderConfirmation 
+                        {this.state.showSpinner ? <Spinner /> : <OrderConfirmation 
                             showConfirm = {this.showConfirm}
                             priceTotal = {this.state.priceTotal.toFixed(2)}
-                        />
-                        </Modal> : null}
+                        />}
+                    </Modal>
             </Fr>
         )
     }

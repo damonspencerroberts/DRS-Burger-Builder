@@ -15,6 +15,7 @@ class OrderSummary extends Component {
         return (<div className = {classes.OsSum}>
         <h3>Order Summary</h3>
         <p>Here is a summary of your delicious burger:</p>
+        <p>Are you sure you don't want any more of these delicious ingredients?</p>
         <ul>
             {orderList}
         </ul>
