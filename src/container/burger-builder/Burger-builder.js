@@ -6,43 +6,16 @@ import OrderSummary from "../../components/burger/order-summary/Order-Summary";
 import Confetti from "../../components/User-Interface/Confetti/Confetti";
 import OrderConfirmation from "../../components/burger/order-confirmation/Order-confirmation";
 import axios from "../../axios-orders";
+import {EachPrice, DefaultIngredients} from "./ing-price-json";
 
-const EACH_PRICE = {
-    lettuce: 0.50,
-    bacon: 1.50,
-    egg: 1.25,
-    pickle: 0.25,
-    cheese: 0.50,
-    chicken: 2.50,
-    patty: 2.50,
-    tomato: 0.25,
-    onion: 0.50,
-    mustard: 0.25,
-    bbq: 0.25,
-    ketchup: 0.25,
-    mayo: 0.25
-}
+const EACH_PRICE = EachPrice;
 
 class BurgerBuilder extends Component {
     constructor(props) {
         super(props)
 
         this.state = {
-            ingredients: {
-              lettuce: 0,
-              mustard: 0,
-              bbq: 0,
-              ketchup: 0,
-              mayo: 0,
-              bacon: 0,
-              egg: 0,
-              tomato: 0, 
-              pickle: 0,
-              onion: 0,
-              cheese: 0,
-              chicken: 0,
-              patty: 0
-            },
+            ingredients: DefaultIngredients,
             priceTotal: 4.00,
             canPurchase: false,
             showOrderSummary: false,
@@ -64,13 +37,17 @@ class BurgerBuilder extends Component {
         if (this.state.showConfirmation) {
             this.handleClear()
         }
+
+        this.setState({ingredients: DefaultIngredients});
     }
 
     handleFinalPurchase() {
         const dupState = {
             ...this.state.ingredients
         }
+        
         let newIng = {};
+        // eslint-disable-next-line array-callback-return
         Object.keys(dupState).map(e => {
             if (dupState[e] > 0 ) {
                 newIng[e] = dupState[e]
@@ -111,8 +88,10 @@ class BurgerBuilder extends Component {
     }
 
     handleOs() {
-        this.setState({showOrderSummary: !this.state.showOrderSummary})
+        this.setState({showOrderSummary: !this.state.showOrderSummary});
     }
+
+    
 
     handleCanPurchase(dupState) {
         const sum = Object.keys(dupState)
