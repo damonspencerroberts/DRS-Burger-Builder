@@ -67,9 +67,18 @@ class BurgerBuilder extends Component {
     }
 
     handleFinalPurchase() {
-        
+        const dupState = {
+            ...this.state.ingredients
+        }
+        let newIng = {};
+        Object.keys(dupState).map(e => {
+            if (dupState[e] > 0 ) {
+                newIng[e] = dupState[e]
+            }
+        });
+
         const order = {
-            ingredients: this.state.ingredients,
+            ingredients: newIng,
             price: this.state.priceTotal,
             customer: {
                 name: 'Henry Kembel',
@@ -92,7 +101,7 @@ class BurgerBuilder extends Component {
                 console.log(response))
             .catch(error =>
                 console.log(error));
-                
+
         this.setState({showOrderSummary: !this.state.showOrderSummary});
         this.showConfirm(); 
     }
@@ -114,7 +123,6 @@ class BurgerBuilder extends Component {
         }, 0);
 
         this.setState({canPurchase: sum > 0})
-        
     }
 
     handleAddIngredients = (type) => {
