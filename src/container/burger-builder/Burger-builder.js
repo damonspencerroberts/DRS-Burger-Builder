@@ -5,7 +5,7 @@ import Modal from "../../components/User-Interface/Modal/Modal";
 import OrderSummary from "../../components/burger/order-summary/Order-Summary";
 import Confetti from "../../components/User-Interface/Confetti/Confetti";
 import OrderConfirmation from "../../components/burger/order-confirmation/Order-confirmation";
-
+import axios from "../../axios-orders";
 
 const EACH_PRICE = {
     lettuce: 0.50,
@@ -67,6 +67,32 @@ class BurgerBuilder extends Component {
     }
 
     handleFinalPurchase() {
+        
+        const order = {
+            ingredients: this.state.ingredients,
+            price: this.state.priceTotal,
+            customer: {
+                name: 'Henry Kembel',
+                address: {
+                    houseNumber: '44',
+                    street: "John Doe Ave",
+                    zip: "47899",
+                    country: "USA"
+                },
+                email: "hkem@gmail.com",
+                phoneNum: "76781893585",
+                rating: 8,
+                message: "Thank you for the delicious burger.",
+                method: "delivery"
+            }
+        }
+        
+        axios.post('/orders.json', order)
+            .then(response => 
+                console.log(response))
+            .catch(error =>
+                console.log(error));
+                
         this.setState({showOrderSummary: !this.state.showOrderSummary});
         this.showConfirm(); 
     }
