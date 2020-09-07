@@ -64,14 +64,12 @@
 .BurgerWarning {
     font-weight: 600;
     color: black;
-    text-shadow: 1px 1px #ff51ff; 
     letter-spacing: 1px;
 }
 
 
 .Price {
     border: 1px solid #ff51ff;
-    text-shadow: 1px 1px #ff51ff;
     padding: 10px 3px 4px 3px;
     border-radius: 5px;
     box-shadow: 1px 1px #1efffa;

@@ -25,9 +25,9 @@
 
 @media (max-width: 499px) {  
     .BuildControls {
-        width: 250px;
+        width: 300px;
+        height: 300px;
         font-size: 0.8rem;
-        padding: 20px;
         overflow: auto;
     }
     
@@ -59,7 +59,6 @@
     border: none;
     padding: 10px;
     background: linear-gradient( #ff85ff,#ff51ff, #ff2aff);
-    text-shadow: 1px 1px #ff51ff;
     border-radius: 5px;
     font-weight: 500 !important;
     font-size: 0.6rem !important;
@@ -81,8 +80,7 @@
   .OrderBtn {
     border: none;
     padding: 15px;
-    background: linear-gradient( #4afffc ,#1efffa ,#00e9e5 );
-    text-shadow: 1px 1px #ff51ff; 
+    background: linear-gradient( #4afffc ,#1efffa ,#00e9e5 ); 
     border-radius: 5px;
     font-weight: 700 !important;
     font-size: 1.2rem !important;
@@ -121,14 +119,12 @@
 }
 
 .Price span {
-    text-shadow: 1px 1px #ff51ff; 
     font-size: 1rem;
     font-weight: 600;
     letter-spacing: 1px;
 }
 
 .Error {
-    text-shadow: 1px 1px #ff51ff;
     color: red;
     font-weight: 800;
     margin-bottom: 5%;
