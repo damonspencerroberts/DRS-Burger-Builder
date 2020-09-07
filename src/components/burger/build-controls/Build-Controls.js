@@ -6,6 +6,7 @@ import BuildController from "./build-controller/Build-Controller";
 export default class BuildControls extends Component {
     render() {
        return  <div className = {classes.BuildControls}>
+                    <h2 style = {{fontStyle: "italic"}}>READY TO ORDER?</h2>
                     <div className = {classes.Price}><span>Price: ${this.props.ingPrice}</span></div>
                     {Controls.map(e => <BuildController 
                         key = {e.label} 

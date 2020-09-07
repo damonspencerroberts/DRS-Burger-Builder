@@ -1,15 +1,11 @@
 .BuildControls {
-    width: 500px;
     display: flex;
     flex-flow: column;
     align-items: center;
-    background-color: rgb(223, 223, 223);
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.603);
+    background: linear-gradient( #c0fffe 30%, #ffceff 100%);
     margin: auto;
-    padding: 10px 0;
+    padding: 50px 0;
     border-radius: 5px;
-    height: 230px;
-    overflow: auto;
 }
 .BuildControls::-webkit-scrollbar {
     width: 13px;
@@ -25,20 +21,19 @@
 
 @media (max-width: 499px) {  
     .BuildControls {
-        width: 300px;
-        height: 300px;
         font-size: 0.8rem;
-        overflow: auto;
     }
     
     .ClearBtn {
       font-size: 0.5rem !important;
       width: 100px !important;
+      height: 60px;
     }
 
     .OrderBtn {
       font-size: 0.9rem !important;
       width: 200px !important;
+      height: 60px;
     }
 
     .Error {
@@ -58,15 +53,15 @@
 
 .ClearBtn {
     border: none;
-    padding: 10px;
     background: linear-gradient( #ff85ff,#ff51ff, #ff2aff);
     border-radius: 5px;
     font-size: 0.6rem !important;
-    width: 70px;
+    width: 150px;
+    height: 40px;
     font: inherit;
     box-shadow: 01px black;
     cursor: pointer;
-    margin: 2% auto;
+    margin: 1% auto;
   }
 
   .ClearBtn:hover {
@@ -79,15 +74,15 @@
 
   .OrderBtn {
     border: none;
-    padding: 15px;
     background: linear-gradient( #4afffc ,#1efffa ,#00e9e5 ); 
     border-radius: 5px;
     font-size: 1.2rem ;
     width: 200px;
+    height: 40px;
     font: inherit;
     box-shadow:black;
     cursor: pointer;
-    margin: 5% auto;
+    margin: 1% auto;
     letter-spacing: 2px;
   }
 
@@ -111,7 +106,7 @@
 .Price {
     box-shadow: 1px 1px #1efffa;
     border: 1px solid #ff51ff;
-    padding: 2px;
+    padding: 10px;
     border-radius: 2px;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.61);
     margin-bottom: 2%;
@@ -124,6 +119,5 @@
 
 .Error {
     color: red;
-    margin-bottom: 5%;
 }
 
