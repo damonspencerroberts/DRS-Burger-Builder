@@ -1,13 +1,12 @@
 @media (max-width: 499px) {
-  .Label {
-    padding: 4% !important;
-  }
   .BuildControlBtnMore,
   .BuildControlBtnLess {
     height: 25px !important;
     width: 25px !important;
     font-size: 0.9rem !important;
-    padding: 4% !important;
+  }
+  .BuildControl {
+    margin: 8% !important;
   }
 
 }

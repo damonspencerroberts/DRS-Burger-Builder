@@ -33,12 +33,12 @@
     
     .ClearBtn {
       font-size: 0.5rem !important;
-      width: 80px !important;
+      width: 100px !important;
     }
 
     .OrderBtn {
       font-size: 0.8rem !important;
-      width: 100px !important;
+      width: 150px !important;
     }
     .Error {
       text-align: center !important;
