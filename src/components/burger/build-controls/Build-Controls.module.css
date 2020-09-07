@@ -27,6 +27,8 @@
     .BuildControls {
         width: 250px;
         font-size: 0.8rem;
+        padding: 20px;
+        overflow: auto;
     }
     
     .ClearBtn {
@@ -41,6 +43,16 @@
     .Error {
       text-align: center !important;
     }
+
+    .OrderBtn:hover {
+      outline: none !important;
+    }
+
+    .ClearBtn:hover {
+      outline: none !important;
+    }
+
+
 }
 
 .ClearBtn {
