@@ -16,18 +16,14 @@
   }
 
   .Button:hover {
-    opacity: 75% !important;
+    background: white;
   }
 
   .Button:focus {
     outline: none;
   }
 
-@media( max-width: 499px ) {
-  .Button:hover {
-    opacity: none !important;
-  }
-}
+
 
 .Start {
     display: flex;

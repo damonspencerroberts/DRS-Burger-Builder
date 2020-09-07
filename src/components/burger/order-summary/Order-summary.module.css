@@ -15,7 +15,7 @@
   }
 
   .OsBtn:hover {
-    opacity: 75% !important;
+    background: #ff51ff;
   }
 
   .OsBtn:focus {
@@ -32,6 +32,5 @@
     font-size: 0.9rem !important;
     
   }
-  .OsBtn:hover {opacity: none !important};
 }
 

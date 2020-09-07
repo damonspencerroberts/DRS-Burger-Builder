@@ -71,7 +71,7 @@
   }
 
   .ClearBtn:hover {
-    opacity: 75%;
+    background: white;
   }
 
   .ClearBtn:focus {
@@ -95,7 +95,7 @@
   }
 
   .OrderBtn:hover {
-    opacity: 75%;
+    background: white;
   }
 
   .OrderBtn:focus {

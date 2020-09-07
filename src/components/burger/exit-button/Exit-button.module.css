@@ -12,7 +12,7 @@
   }
   
   .Btn:hover {
-    opacity: 75%;
+    background: #1efffa;
   }
   
   .Btn:focus {

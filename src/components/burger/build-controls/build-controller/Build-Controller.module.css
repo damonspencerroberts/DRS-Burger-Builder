@@ -44,7 +44,7 @@
   
   .BuildControlBtnMore:hover,
   .BuildControlBtnLess:hover {
-    opacity: 70%;
+    background: white;
 
   }
   .BuildControlBtnMore:focus,
@@ -66,10 +66,3 @@
     text-shadow: 1px 1px #ff51ff;
   }
 
-  @media (max-width: 499px) {
-    .BuildControlBtnLess:hover,
-    .BuildControlBtnMore:hover {
-      opacity: none !important;
-    }
-  }
-  

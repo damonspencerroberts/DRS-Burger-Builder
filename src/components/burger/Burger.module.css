@@ -37,10 +37,6 @@
         width: 60% !important;
         margin-bottom: 5% !important;
     }
-
-    .Burger:hover {
-        opacity: none !important;
-    }
 }
 
 .Burger::-webkit-scrollbar {
@@ -57,7 +53,6 @@
 
 .Burger:hover {
     cursor: pointer;
-    opacity: 80%;
 }
 
 .ScaleBurger {
