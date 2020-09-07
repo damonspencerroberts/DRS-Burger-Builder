@@ -1,12 +1,6 @@
 @media (max-width: 499px) {
-  .BuildControlBtnMore,
-  .BuildControlBtnLess {
-    height: 25px !important;
-    width: 25px !important;
-    font-size: 0.9rem !important;
-  }
   .BuildControl {
-    margin: 8% !important;
+    margin: 10% !important;
   }
 
 }
@@ -30,10 +24,10 @@
     display: block;
     font: inherit;
     margin: 0 5px;
-    height: 30px;
-    width: 30px;
+    height:35px;
+    width: 35px;
     color: rgb(0, 0, 0);
-    border-radius: 100%;
+    border-radius: 10px;
     border: none;
     cursor: pointer;
     font-size: 1.2rem;
@@ -41,11 +35,6 @@
     font-weight: 600;
   }
   
-  .BuildControlBtnMore:hover,
-  .BuildControlBtnLess:hover {
-    background: white;
-
-  }
   .BuildControlBtnMore:focus,
   .BuildControlBtnLess:focus {
     outline: none;
