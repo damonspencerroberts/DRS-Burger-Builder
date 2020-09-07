@@ -40,7 +40,7 @@
       font-size: 0.9rem !important;
       width: 200px !important;
     }
-    
+
     .Error {
       text-align: center !important;
     }
@@ -61,7 +61,6 @@
     padding: 10px;
     background: linear-gradient( #ff85ff,#ff51ff, #ff2aff);
     border-radius: 5px;
-    font-weight: 500 !important;
     font-size: 0.6rem !important;
     width: 70px;
     font: inherit;
@@ -71,7 +70,7 @@
   }
 
   .ClearBtn:hover {
-    background: white;
+    background: linear-gradient( #ffa9ff 30%, #ff59ff 65%, #ff17ff 100%);
   }
 
   .ClearBtn:focus {
@@ -83,7 +82,6 @@
     padding: 15px;
     background: linear-gradient( #4afffc ,#1efffa ,#00e9e5 ); 
     border-radius: 5px;
-    font-weight: 700;
     font-size: 1.2rem ;
     width: 200px;
     font: inherit;
@@ -94,7 +92,7 @@
   }
 
   .OrderBtn:hover {
-    background: white;
+    background: linear-gradient( #b4fffe 30%, #79fffd 65%, #5bfffc 100%);
   }
 
   .OrderBtn:focus {
@@ -121,13 +119,11 @@
 
 .Price span {
     font-size: 1rem;
-    font-weight: 600;
     letter-spacing: 1px;
 }
 
 .Error {
     color: red;
-    font-weight: 800;
     margin-bottom: 5%;
 }
 

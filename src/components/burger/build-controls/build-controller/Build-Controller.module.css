@@ -14,7 +14,6 @@
 
 .Label {
   padding: 10px;
-  font-weight: 600;
   width: 80px;
   color: rgb(0, 0, 0);
 }
@@ -38,6 +37,14 @@
   .BuildControlBtnMore:focus,
   .BuildControlBtnLess:focus {
     outline: none;
+  }
+  
+  .BuildControlBtnMore:hover {
+    background: linear-gradient( #b4fffe 30%, #79fffd 65%, #5bfffc 100%);
+  }
+  
+  .BuildControlBtnLess:hover {
+    background: linear-gradient( #ffa9ff 30%, #ff59ff 65%, #ff17ff 100%);
   }
 
   .BuildControlBtnMore{

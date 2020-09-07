@@ -4,7 +4,6 @@
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.596);
     background: linear-gradient( #4afffc 30%,#ff51ff 100%);
     border-radius: 5px;
-    font-weight: 700 !important;
     font-size: 1.2rem !important;
     width: 300px;
     font: inherit;
@@ -15,7 +14,7 @@
   }
 
   .Button:hover {
-    background: white;
+    background: linear-gradient( #ffabff 30%, #90fffd 100%);
   }
 
   .Button:focus {
