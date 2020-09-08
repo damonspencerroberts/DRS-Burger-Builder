@@ -9,6 +9,9 @@ import axios from "../../axios-orders";
 import {EachPrice, DefaultIngredients} from "./ing-price-json";
 import StartOrder from "../../components/burger/start-order/start-order";
 import Spinner from "../../components/burger/spinner/Spinner";
+import errorHandler from "../../components/error-handler/error-handler";
+
+
 
 const EACH_PRICE = EachPrice;
 
@@ -215,5 +218,5 @@ class BurgerBuilder extends Component {
     }
 }
 
-export default BurgerBuilder;
+export default errorHandler(BurgerBuilder, axios);
 

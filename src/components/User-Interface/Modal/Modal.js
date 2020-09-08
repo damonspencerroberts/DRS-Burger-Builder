@@ -20,7 +20,8 @@ class Modal extends Component {
                     style = {{
                         transform: this.props.show ? 'translateY(0)' : `${this.props.translate}`, //'translateY(-100vh)'//'translateY(100vh)'
                         opacity: this.props.show ?  '1' : '0',
-                        width: this.props.show ? `${this.props.width}` : null
+                        width: this.props.show ? `${this.props.width}` : null,
+                        display: this.props.show ? "flex" : "none"
                     }}>
                     {this.props.children}
                 </div>
