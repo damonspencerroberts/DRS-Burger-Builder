@@ -12,16 +12,22 @@ const errorHandler = ( WrappedComp, axios ) => {
         
 
         //used to handle axios errors
-        componentDidMount() {
+        componentWillMount() {
             //sets state back to null if request success
-            axios.interceptors.request.use(req => {
+            this.reqInt = axios.interceptors.request.use(req => {
                 this.setState({error: null});
                 return req;
             });
+
             //if there is error will set state to error
-            axios.interceptors.response.use(res => res, error => {
+            this.resInt = axios.interceptors.response.use(res => res, error => {
                 this.setState({error: error});
             })
+        }
+
+        componentWillUnmount() {
+            axios.interceptors.response.eject(this.resInt);
+            axios.interceptors.request.eject(this.reqInt);
         }
 
         handleErrorConfirm = () => {
@@ -35,9 +41,9 @@ const errorHandler = ( WrappedComp, axios ) => {
                     show = {this.state.error}
                     backdropClick = {this.handleErrorConfirm}
                 >
-                <div className = {classes.Error}>
-                    {this.state.error ? this.state.error.message : null}
-                </div>
+                    <div className = {classes.Error}>
+                        {this.state.error ? this.state.error.message : null}
+                    </div>
                 </Modal>
                 <WrappedComp {...this.props} /> 
             </Fr>

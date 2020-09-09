@@ -20,14 +20,15 @@ class BurgerBuilder extends Component {
         super(props)
 
         this.state = {
-            ingredients: DefaultIngredients,
+            ingredients: null,
             priceTotal: 4.00,
             canPurchase: false,
             showOrderSummary: false,
             burgerScale: false,
             showConfirmation: false,
             startingOrder: false,
-            showSpinner: false
+            showSpinner: false,
+            error: null
         }
         this.handleAddIngredients = this.handleAddIngredients.bind(this);
         this.handleLessIngredients = this.handleLessIngredients.bind(this);
@@ -38,6 +39,17 @@ class BurgerBuilder extends Component {
         this.handleFinalPurchase = this.handleFinalPurchase.bind(this);
         this.showConfirm = this.showConfirm.bind(this);
         this.startOrder = this.startOrder.bind(this);
+    }
+
+    componentDidMount() {
+        axios.get('https://drs-burger.firebaseio.com/defaultIngredients.json')
+        .then(response => {
+            this.setState({ingredients: response.data})
+        })
+        .catch(error => {
+            this.setState({error: error})
+        });
+
     }
 
     startOrder() {
@@ -87,12 +99,14 @@ class BurgerBuilder extends Component {
         this.setState({showSpinner: true})
 
         axios.post('/orders.json', order)
-            .then(response => 
-                this.setState({showSpinner: false, canPurchase: false}))
-            .catch(error =>
-                this.setState({showSpinner: false, canPurchase: false}));
-
-        this.setState({showOrderSummary: !this.state.showOrderSummary});
+            .then(response => {
+                this.setState({showSpinner: false, canPurchase: false})
+            })
+                
+            .catch(error => {
+                this.setState({showSpinner: false, canPurchase: false});
+        });
+        this.setState({showOrderSummary: !this.state.showOrderSummary});  
         this.showConfirm(); 
     }
 
@@ -168,9 +182,13 @@ class BurgerBuilder extends Component {
 
         const screenSmall = window.innerWidth < 499;
 
-        return (
+        let burgerSt = this.state.error ? <p>
+            We appologize! There is an issue loading the ingredients!
+        </p> : <Spinner />
+        
+        if (this.state.ingredients) {
+           burgerSt = (
             <Fr>
-                {this.state.showConfirmation ? <Confetti /> : null}
                 <Burger 
                     ingredients = {this.state.ingredients}
                     totalPrice = {this.state.priceTotal.toFixed(2)}
@@ -201,7 +219,13 @@ class BurgerBuilder extends Component {
                     disInfo = {disableInfo}
                     disOrder = {this.state.canPurchase}
                 />}
-                
+            </Fr>) 
+        }
+        
+        return (
+            <Fr>
+                {this.state.showConfirmation ? <Confetti /> : null}
+                    {burgerSt}
                     <Modal 
                         show = {this.state.showConfirmation} 
                         backdropClick = {this.showConfirm}
