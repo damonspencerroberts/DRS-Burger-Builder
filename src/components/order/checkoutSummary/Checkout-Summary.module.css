@@ -1,0 +1,53 @@
+.CheckSummary {
+    text-align: center;
+    width: 80%;
+    margin: auto;
+}
+
+@media (min-width: 600px) {
+    .CheckSummary {
+        width: 500px;
+    }
+}
+
+.SuBtn,
+.FaBtn {
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1.2rem !important;
+    width: 300px;
+    font: inherit;
+    box-shadow:black;
+    cursor: pointer;
+    margin: 2% auto;
+    letter-spacing: 2px;
+  }
+
+.SuBtn {
+    background: linear-gradient( #4afffc ,#1efffa ,#00e9e5 );
+}
+.FaBtn {
+    background: linear-gradient( #ffa9ff 30%, #ff59ff 65%, #ff17ff 100%);;
+}
+.SuBtn:hover {
+    background: linear-gradient( #b4fffe 30%, #79fffd 65%, #5bfffc 100%);
+}
+
+.FaBtn:hover {
+    background: linear-gradient( #ffbeff 30%, #ff96ff 65%, #ff65ff 100%);
+}
+
+.SuBtn:focus, 
+.FaBtn:focus {
+    outline: none;
+}
+
+@media (max-width: 499px) {
+  .SuBtn,
+  .FaBtn {
+    width: 200px !important;
+    font-size: 0.9rem !important;
+    
+  }
+}

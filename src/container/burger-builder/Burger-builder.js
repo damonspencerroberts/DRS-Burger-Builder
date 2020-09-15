@@ -190,6 +190,7 @@ class BurgerBuilder extends Component {
            burgerSt = (
             <Fr>
                 <Burger 
+                    show
                     ingredients = {this.state.ingredients}
                     totalPrice = {this.state.priceTotal.toFixed(2)}
                     burgerClick = {this.handleBurgerScale}

@@ -26,7 +26,7 @@ export default class Burger extends Component {
         const transLength = transIngredients.length;
                 
         return  <Fr>
-                    <div className = {classes.Price}><span>Price: ${this.props.totalPrice}</span></div>
+                    {this.props.show ? <div className = {classes.Price}><span>Price: ${this.props.totalPrice}</span></div> : null }
                     <div className = {`${classes.Burger} ${this.props.scaleBurger ? classes.ScaleBurger : null}`} 
                     onClick = {this.props.burgerClick}>
                         <BurgerIngredient type = "top-bun"/>
