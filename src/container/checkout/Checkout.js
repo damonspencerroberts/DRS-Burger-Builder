@@ -43,7 +43,7 @@ class Checkout extends Component {
         const n = num % 2;
         return n === 0 ? true : false
     }
-    
+
     handleCancel() {
         this.props.history.goBack();
     }

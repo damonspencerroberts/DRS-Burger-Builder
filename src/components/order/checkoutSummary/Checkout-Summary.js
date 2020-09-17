@@ -6,7 +6,8 @@ import Burger from "../../burger/Burger";
 const checkoutSummary = (props) => {
     return (
         <div className = {classes.CheckSummary}>
-            <h1>Such a delicious burger!</h1>
+            <h3>Like how your burger looks?</h3>
+            <h4>Continue to checkout!</h4>
             <div stylle = {{
                 height: "1500px",
                 width: "150px",
