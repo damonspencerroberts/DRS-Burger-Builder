@@ -66,7 +66,18 @@ class BurgerBuilder extends Component {
     }
 
     handleFinalPurchase() {
-        const dupState = {
+
+        const queryParams = [];
+        for (let i in this.state.ingredients) {
+            queryParams.push(encodeURIComponent(i) + "=" + encodeURIComponent(this.state.ingredients[i]))
+        }
+        const queryString = queryParams.join('&');
+
+        this.props.history.push({
+            pathname: "/burger-checkout",
+            search: "?" + queryString
+        });
+        /*const dupState = {
             ...this.state.ingredients
         }
 
@@ -107,7 +118,7 @@ class BurgerBuilder extends Component {
                 this.setState({showSpinner: false, canPurchase: false});
         });
         this.setState({showOrderSummary: !this.state.showOrderSummary});  
-        this.showConfirm(); 
+        this.showConfirm(); */
     }
 
     handleBurgerScale() {

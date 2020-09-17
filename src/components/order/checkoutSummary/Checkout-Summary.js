@@ -16,8 +16,8 @@ const checkoutSummary = (props) => {
                 show = {false}
                 ingredients = {props.ingredients}
             />
-            <button className = {classes.SuBtn} onClick>Continue</button>
-            <button className = {classes.FaBtn} onClick>Cancel</button>
+            <button className = {classes.SuBtn} onClick = {props.contClick}>Continue</button>
+            <button className = {classes.FaBtn} onClick = {props.cancClick}>Cancel</button>
             </div>
         </div>
 
