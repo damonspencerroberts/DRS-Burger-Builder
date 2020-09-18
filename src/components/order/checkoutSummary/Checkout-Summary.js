@@ -14,7 +14,8 @@ const checkoutSummary = (props) => {
                 margin: "auto"
             }}>
             <Burger 
-                show = {false}
+                show
+                totalPrice = {props.totalPrice}
                 ingredients = {props.ingredients}
             />
             <button className = {classes.SuBtn} onClick = {props.contClick}>Continue</button>
