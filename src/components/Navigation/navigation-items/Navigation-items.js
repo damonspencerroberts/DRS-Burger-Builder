@@ -4,8 +4,8 @@ import NavItem from "./navigation-item/Nav-item";
 
 const NavItems = (props) => 
     <ul className = {classes.NavigationItems}>
-        <NavItem link = "/" active>Burger Builder</NavItem>
-        <NavItem link = "/">Checkout</NavItem>
+        <NavItem link = "/" exact>Burger Builder</NavItem>
+        <NavItem link = "/orders">Checkout</NavItem>
     </ul>
 export default NavItems;
 

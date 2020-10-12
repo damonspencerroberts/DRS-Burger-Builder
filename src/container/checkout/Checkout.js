@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import CheckoutSummary from "../../components/order/checkoutSummary/Checkout-Summary";
+import CheckoutSummary from "../../components/checkoutSummary/Checkout-Summary";
 import {Route, withRouter} from "react-router-dom";
 import {DefaultIngredients} from "../burger-builder/ing-price-json";
 import ContactData from "../contact-data/contact-data";

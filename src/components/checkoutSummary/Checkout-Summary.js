@@ -1,6 +1,6 @@
 import React from 'react';
 import classes from "./Checkout-Summary.module.css";
-import Burger from "../../burger/Burger";
+import Burger from "../burger/Burger";
 
 
 const checkoutSummary = (props) => {

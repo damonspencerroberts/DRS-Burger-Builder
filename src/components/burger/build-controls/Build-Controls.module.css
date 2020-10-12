@@ -1,15 +1,14 @@
 .BuildControls {
     display: flex;
-    height: 200px;
-    width: 80%;
+    height: 350px;
+    width: 100%;
     flex-flow: column;
     align-items: center;
     background: linear-gradient( #c0fffe 30%, #ffceff 100%);
-    margin: auto;
-    padding: 50px 0;
+    padding: 20px 0;
     border-radius: 5px;
     overflow: scroll;
-    margin: 0 auto 10% auto;
+    margin: 0 auto;
     border-radius: 5px;
     box-shadow: 0 5px 10px #ff51ff;
 }

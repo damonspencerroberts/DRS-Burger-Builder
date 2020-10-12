@@ -1,6 +1,6 @@
 .Burger {
     width: 100%;
-    margin: 1% auto;
+    margin: auto;
     height: 300px;
     overflow: auto;
     text-align: center;
@@ -34,7 +34,7 @@
 
     .Price {
         width: 60% !important;
-        margin-bottom: 5% !important;
+        margin-bottom: 2% !important;
     }
 }
 

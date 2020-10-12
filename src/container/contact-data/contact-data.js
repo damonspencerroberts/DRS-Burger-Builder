@@ -102,21 +102,6 @@ class ContactData extends Component {
             }
         }
 
-        const cust = {
-
-            customer: {
-                name: this.state.customer.name,
-                address: {
-                    street: this.state.customer.address.street,
-                    zip: this.state.customer.address.zip,
-                    country: this.state.customer.address.country
-                },
-                email: this.state.customer.email,
-                phoneNum: this.state.customer.phoneNum,
-                rating: this.state.customer.rating,
-                method: this.state.customer.method
-            }
-        }
         this.setState({showSpinner: true})
 
         axios.post('/orders.json', order)
