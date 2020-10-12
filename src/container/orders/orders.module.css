@@ -1,0 +1,16 @@
+.Price {
+    border: 1px solid #ff51ff;
+    padding: 10px 3px 4px 3px;
+    border-radius: 5px;
+    box-shadow: 1px 1px #1efffa;
+    width: 60%;
+    text-align: center;
+    margin: 0 auto 2% auto;
+}
+
+.Price span {
+    font-size: 2rem;
+    letter-spacing: 1.5px;
+    padding: 2px;
+}
+

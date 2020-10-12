@@ -3,7 +3,6 @@ import Burger from "../../components/burger/Burger";
 import BuildControls from "../../components/burger/build-controls/Build-Controls";
 import Modal from "../../components/User-Interface/Modal/Modal";
 import OrderSummary from "../../components/burger/order-summary/Order-Summary";
-import Confetti from "../../components/User-Interface/Confetti/Confetti";
 import OrderConfirmation from "../../components/burger/order-confirmation/Order-confirmation";
 import axios from "../../axios-orders";
 import {EachPrice, DefaultIngredients} from "./ing-price-json";
@@ -237,7 +236,6 @@ class BurgerBuilder extends Component {
         
         return (
             <Fr>
-                {this.state.showConfirmation ? <Confetti /> : null}
                     {burgerSt}
                     <Modal 
                         show = {this.state.showConfirmation} 

@@ -5,6 +5,7 @@ import axios from "../../axios-orders";
 import Spinner from "../../components/burger/spinner/Spinner";
 import OrderConfirmation from "../../components/burger/order-confirmation/Order-confirmation";
 import Modal from "../../components/User-Interface/Modal/Modal";
+import Confetti from "../../components/User-Interface/Confetti/Confetti";
 
 
 class ContactData extends Component {
@@ -80,12 +81,12 @@ class ContactData extends Component {
             }
         });
 
-        const h = this.props.totalPrice;
-        this.setState({price: h});
+        const newPrice = this.props.totalPrice;
+        this.setState({price: newPrice});
 
         const order = {
             ingredients: newIng,
-            price: this.state.price,
+            price: newPrice,
             customer: {
                 name: 'Henry Kembel',
                 address: {
@@ -119,6 +120,7 @@ class ContactData extends Component {
     render() {
         const screenSmall = window.innerWidth < 499;
         return ( <Fragment>
+            {this.state.showConfirmation ? <Confetti /> : null}
             {this.state.showConfirmation ? 
                 <Modal 
                         show = {this.state.showConfirmation} 
