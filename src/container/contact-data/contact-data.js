@@ -6,6 +6,7 @@ import Spinner from "../../components/burger/spinner/Spinner";
 import OrderConfirmation from "../../components/burger/order-confirmation/Order-confirmation";
 import Modal from "../../components/User-Interface/Modal/Modal";
 import Confetti from "../../components/User-Interface/Confetti/Confetti";
+import Input from "../../components/User-Interface/Forms/Input/input";
 
 
 class ContactData extends Component {
@@ -135,27 +136,10 @@ class ContactData extends Component {
                 </Modal> : <div className = {classes.Contact}>
                     {this.state.showSpinner ? <Spinner /> : <form>
                     <h2>Please Enter Your Contact Information</h2>
-                        <input type = "text" placeholder = "First Name"/>
-                        <input type = "text" placeholder = "Last Name"/>
-                        <div className = {classes.Address}>
-                            <h4>Address</h4>
-                            <div className = {classes.Addy}>
-                                <input type = "text" placeholder = "Street Address" />
-                                <input type = "text" placeholder = "Zip Code"/>
-                            </div>
-                            <div className = {classes.Addy}>
-                                <input type = "text" placeholder = "City" />
-                                <input type = "text" placeholder = "Country" />
-                            </div>
-                        </div>
-                        <div className = {classes.More}>
-                            <input type = "email" placeholder = "E-Mail" />
-                            <input type = "text" placeholder = "Phone Number" />
-                            <select id="method" name="Order Method">
-                                <option>Delivery</option>
-                                <option>Pick-Up</option>
-                            </select>
-                        </div>
+                        <Input inputType = "input" type = "text" placeholder = "Full Name"/>
+                        <Input inputType = "input" type = "text" placeholder = "Address"/>
+                        <Input inputType = "input" type = "email" placeholder = "E-Mail" />
+                        <Input inputType = "input" type = "text" placeholder = "Phone-Number" />
                         <button 
                             type = "submit" 
                             className = {classes.Button}
