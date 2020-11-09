@@ -60,7 +60,7 @@ class ContactData extends Component {
                                 displayValue: 'Pick-Up'
                             }]
                     },
-                    value: ''
+                    value: 'delivery'
                 }
             },
             price: null,
@@ -143,14 +143,14 @@ class ContactData extends Component {
 
         const order = {
             ingredients: newIng,
-            price: newPrice/*,
+            price: newPrice,
             customer: {
                 name: this.state.orderForm.name.value,
                 address: this.state.orderForm.address.value,
                 phoneNumber: this.state.orderForm.phoneNumber.value,
                 email: this.state.orderForm.email.value,
                 deliveryMethod: this.state.orderForm.delivery.value
-            }*/
+            }
         }
 
         /*alert(`name: ${this.state.orderForm.name.value},
@@ -183,6 +183,7 @@ class ContactData extends Component {
         }
         console.log(formElementsArr);
         const screenSmall = window.innerWidth < 499;
+        
         return ( <Fragment>
             {this.state.showConfirmation ? <Confetti /> : null}
             {this.state.showConfirmation ? 
@@ -195,9 +196,14 @@ class ContactData extends Component {
                     <OrderConfirmation 
                         showConfirm = {this.handleRedirect}
                         priceTotal = {this.state.price}
+                        name = {this.state.orderForm.name.value}
+                        email = {this.state.orderForm.email.value}
+                        address = {this.state.orderForm.address.value}
+                        phone = {this.state.orderForm.phoneNumber.value}
+                        method = {this.state.orderForm.delivery.value}
                     /> 
                 </Modal> : <div className = {classes.Contact}>
-                    {this.state.showSpinner ? <Spinner /> : <form>
+                    {this.state.showSpinner ? <Spinner /> : <form onSubmit={this.handleOrder}>
                     <h2>Please Enter Your Contact Information</h2>
                         {formElementsArr.map(e => {
                             //config comes from array we made
@@ -212,7 +218,6 @@ class ContactData extends Component {
                         <button 
                             type = "submit" 
                             className = {classes.Button}
-                            onClick = {this.handleOrder}
                             >Confirm Order</button>
                     </form>}
                 </div>}

@@ -11,20 +11,23 @@ const input = (props) => {
             className = {classes.InputElement} 
             {...props.elementConfig} 
             value={props.value}
-            onChange={props.changed}/>;
+            onChange={props.changed}
+            required/>;
             break;
         case ('textarea'):
             inputElement = <textarea 
             className = {classes.InputElement} 
             {...props}
-            onChange={props.changed}/>;
+            onChange={props.changed}
+            required/>;
             break;
         case ('select'):
             inputElement = (
                 <select 
                 className = {classes.SelectInput} 
                 value = {props.value}
-                onChange={props.changed}>
+                onChange={props.changed}
+                required >
                     {props.elementConfig.options.map(e => {
                         return (
                             <option key = {e.value} value={e.value}>
