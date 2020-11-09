@@ -14,19 +14,54 @@ class ContactData extends Component {
         super()
 
         this.state = {
-            customer: {
-                firstName: '',
-                lastName: '',
-                houseNumber: '',
-                address: {
-                    street: '',
-                    zip: '',
-                    country: ''
+            orderForm: {
+                name: {
+                    elementType: 'input',
+                    elementConfig: {
+                        type: 'text',
+                        placeholder: 'Your Full Name'
+                    },
+                    value: ''
                 },
-                email: '',
-                phoneNum: '',
-                message: '',
-                method: ''
+                email: {
+                    elementType: 'input',
+                    elementConfig: {
+                        type: 'email',
+                        placeholder: 'Email'
+                    },
+                    value: ''
+                },
+                address: {
+                    elementType: 'input',
+                    elementConfig: {
+                        type: 'text',
+                        placeholder: 'Your Address'
+                    },
+                    value: ''
+                },
+                phoneNumber: {
+                    elementType: 'input',
+                    elementConfig: {
+                        type: 'text',
+                        placeholder: 'Phone Number'
+                    },
+                    value: ''
+                },
+                delivery: {
+                    elementType: 'select',
+                    elementConfig: {
+                        options: [
+                            {
+                                value: 'delivery',
+                                displayValue: 'Delivery'
+                            },
+                            {
+                                value: 'pick-up',
+                                displayValue: 'Pick-Up'
+                            }]
+                    },
+                    value: ''
+                }
             },
             price: null,
             ingredients: null,
@@ -38,6 +73,7 @@ class ContactData extends Component {
         this.handleClear = this.handleClear.bind(this);
         this.handleName = this.handleName.bind(this);
         this.handleRedirect = this.handleRedirect.bind(this);
+        this.handleFormChange = this.handleFormChange.bind(this);
 
     }
 
@@ -66,6 +102,26 @@ class ContactData extends Component {
             });
           }*/
     }
+
+    handleFormChange(event, identifier) {
+        const formState = {
+            ...this.state.orderForm
+        }
+
+        const updateFormElement = {
+            ...formState[identifier] 
+        }
+
+        updateFormElement.value = event.target.value;
+
+        formState[identifier] = updateFormElement;
+
+        this.setState({orderForm: formState});
+
+        console.log(formState);
+
+
+    }
     
     handleOrder(event) {
         event.preventDefault();
@@ -87,22 +143,21 @@ class ContactData extends Component {
 
         const order = {
             ingredients: newIng,
-            price: newPrice,
+            price: newPrice/*,
             customer: {
-                name: 'Henry Kembel',
-                address: {
-                    houseNumber: '44',
-                    street: "John Doe Ave",
-                    zip: "47899",
-                    country: "USA"
-                },
-                email: "hkem@gmail.com",
-                phoneNum: "76781893585",
-                rating: 8,
-                message: "Thank you for the delicious burger.",
-                method: "delivery"
-            }
+                name: this.state.orderForm.name.value,
+                address: this.state.orderForm.address.value,
+                phoneNumber: this.state.orderForm.phoneNumber.value,
+                email: this.state.orderForm.email.value,
+                deliveryMethod: this.state.orderForm.delivery.value
+            }*/
         }
+
+        /*alert(`name: ${this.state.orderForm.name.value},
+        address: ${this.state.orderForm.address.value},
+        phoneNumber: ${this.state.orderForm.phoneNumber.value},
+        email: ${this.state.orderForm.email.value},
+        deliveryMethod: ${this.state.orderForm.delivery.value}`);*/
 
         this.setState({showSpinner: true})
 
@@ -119,6 +174,14 @@ class ContactData extends Component {
     }
 
     render() {
+        const formElementsArr = [];
+        for (let e in this.state.orderForm) {
+            formElementsArr.push({
+                id: e,
+                config: this.state.orderForm[e]
+            });
+        }
+        console.log(formElementsArr);
         const screenSmall = window.innerWidth < 499;
         return ( <Fragment>
             {this.state.showConfirmation ? <Confetti /> : null}
@@ -136,10 +199,16 @@ class ContactData extends Component {
                 </Modal> : <div className = {classes.Contact}>
                     {this.state.showSpinner ? <Spinner /> : <form>
                     <h2>Please Enter Your Contact Information</h2>
-                        <Input inputType = "input" type = "text" placeholder = "Full Name"/>
-                        <Input inputType = "input" type = "text" placeholder = "Address"/>
-                        <Input inputType = "input" type = "email" placeholder = "E-Mail" />
-                        <Input inputType = "input" type = "text" placeholder = "Phone-Number" />
+                        {formElementsArr.map(e => {
+                            //config comes from array we made
+                            return <Input 
+                            key={e.id}
+                            elementType={e.config.elementType} 
+                            elementConfig={e.config.elementConfig} 
+                            value={e.config.value}
+                            //annonymous function to change for each value in form
+                            changed={(event) => this.handleFormChange(event, e.id)}/>
+                        })}
                         <button 
                             type = "submit" 
                             className = {classes.Button}
